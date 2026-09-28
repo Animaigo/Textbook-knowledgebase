@@ -330,6 +330,12 @@ def build_dist(args, tools: str, skills: list[str]) -> int:
 
     files: list[tuple[str, str]] = []
     files += collect(tools, f"{bundle}/tools", {DIST_ASSETS_DIR})
+    # 自带示例：让第一次接触的人不必先入库一本书，就能跑通一次校验看到结果。
+    # 排除跑出来的报告，那是产物，不该跟着分发。
+    demo_dir = os.path.join(assets, "demo")
+    if os.path.isdir(demo_dir):
+        files += [p for p in collect(demo_dir, f"{bundle}/demo", set())
+                  if not os.path.basename(p[0]).endswith("-引用校验报告.md")]
     for sk in skills:
         files += collect(sk, f"{bundle}/skills/{os.path.basename(sk.rstrip(chr(92) + '/'))}", set())
 
