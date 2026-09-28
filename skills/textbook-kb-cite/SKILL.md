@@ -1,6 +1,6 @@
 ---
 name: textbook-kb-cite
-version: 1.6.2
+version: 1.6.3
 display_name: 教材知识库写作与引用校验
 description: 依据本地教材知识库（把人卫版教材原文抽成可检索 Markdown + 页锚点）写图表/笔记/讲义，并在交付前用 cite_check.py 逐句回查原文。当任务涉及「按教材写」「依据教材」「教材原文」「引用校验」「cite_check」「知识库」「核对页码」「皮肤性病学」「妇产科学」「精神病学」「神经病学」「眼科学」「耳鼻咽喉头颈外科学」「新书入库」，或用户要求把教材内容做成交付物、质疑内容是否真有教材依据时使用。
 agent_created: true
@@ -236,7 +236,8 @@ KB="$ROOT/kb/妇产科学-第10版"          # 换书只改这一行；PY / ROOT
 # 分发包：不含任何教材原文，用于发给别人 / 上传公开仓库
 "$PY" -X utf8 "$ROOT/tools/make_portable.py" --dist
 #   → 教材知识库工具包-YYYYMMDD.zip（约 70KB）
-#     内容：tools/ + skills/ + README.md + 新书入库核对清单.md + LICENSE + .gitignore + 空的 kb/ 说明
+#     内容：tools/ + skills/ + demo/ + README.md + 新书入库核对清单.md + LICENSE + .gitignore + 空的 kb/ 说明
+#     demo/ 是自带示例（自编文字、无版权）：新人不必先入库一本书，就能跑通一次校验看到结果
 #   → 上传 GitHub 的完整步骤见 tools/dist-assets/上传GitHub步骤.md
 #     分发前自动脱敏：文本里的 `C:/Users/<用户名>/…` 会换成 `<用户目录>`，
 #     打包输出末尾列出替换清单 —— 一旦报出文件名，就说明有本机路径混进来了
