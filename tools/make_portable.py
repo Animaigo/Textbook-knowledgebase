@@ -234,8 +234,9 @@ zip 本身即 `kb` + `tools` 的完整快照，覆盖即达一致，也不会误
 
 ---
 
-本文件由 `tools/dist-assets/_README-便携版源.md` 生成，`make_portable.py` 原样写入包内。
-要改内容请改源文件后重新打包；直接改包内这份会被下次打包覆盖。
+本文件是便携包专用说明（与分发包的 `dist-assets/README-先读我.md` 是两份不同文档），
+由 `tools/make_portable.py` 顶部的 `README` 常量原样写入包内。
+要改内容请改脚本里的常量后重新打包；直接改包内这份会被下次打包覆盖。
 """
 
 
